@@ -1,0 +1,16 @@
+{
+  "name": "trailforge",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  },
+  "packageManager": "pnpm@12.3.4"
+}

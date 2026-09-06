@@ -1,0 +1,11 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+
+# Перенесено из apps/web/pnpm-workspace.yaml, который сгенерировал
+# create-next-app: вложенный workspace-корень ломает workspace:*-ссылки.
+allowBuilds:
+  # esbuild распаковывает нативный бинарник в postinstall — без него vitest не стартует
+  esbuild: true
+  sharp: false
+  unrs-resolver: false
