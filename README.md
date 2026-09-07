@@ -1,18 +1,18 @@
 # TrailForge
 
-Планировщик пеших маршрутов для регионов со слабым покрытием картографическими
-данными — Армения, Грузия, Кавказ. Расчёт маршрутов с учётом рельефа,
-профиль высот, интерактивный hillshade, офлайн-режим.
+A hiking route planner for regions with thin cartographic coverage — Armenia,
+Georgia, the Caucasus. Terrain-aware routing, elevation profiles, interactive
+hillshade, offline mode.
 
-## Структура
+## Layout
 
-- `apps/web` — Next.js приложение (App Router)
-- `packages/geo` — проекция Web Mercator, тайловая математика, геодезия
+- `apps/web` — Next.js application (App Router)
+- `packages/geo` — Web Mercator projection, tile math, geodesy
 
-## Разработка
+## Development
 
     pnpm install
     pnpm --filter web dev
     pnpm --filter @trailforge/geo test
 
-Требования: Node.js >= 20.9, pnpm >= 9.
+Requirements: Node.js >= 20.9, pnpm >= 9.

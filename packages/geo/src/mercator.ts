@@ -34,7 +34,7 @@ const RAD_TO_DEG = 180 / Math.PI;
 
 function assertZoom(z: number): void {
   if (!Number.isInteger(z) || z < 0 || z > 30) {
-    throw new RangeError(`zoom должен быть целым в диапазоне 0..30, получено: ${z}`);
+    throw new RangeError(`zoom must be an integer in the range 0..30, got: ${z}`);
   }
 }
 

@@ -1,17 +1,17 @@
 # @trailforge/geo
 
-Проекция Web Mercator, тайловая математика и сферическая геодезия.
+Web Mercator projection, tile math and spherical geodesy.
 
-Пакет отдаёт **сырой TypeScript** — сборки нет. Потребитель обязан пропустить
-его через свой компилятор (для Next.js это `transpilePackages`).
+The package ships **raw TypeScript** — there is no build step. Consumers must run
+it through their own compiler (for Next.js that means `transpilePackages`).
 
-## Модули
+## Modules
 
-- `mercator` — перевод координат в тайлы и метры проекции, разрешение на пиксель
-- `distance` — расстояния, азимуты и длина трека по сфере
+- `mercator` — coordinates to tiles and projection metres, resolution per pixel
+- `distance` — distances, bearings and track length on a sphere
 
-## Соглашения
+## Conventions
 
-- Координаты — объект `{ lng, lat }` в градусах, WGS84.
-- Тайлы — схема XYZ (OSM/Google), начало отсчёта в северо-западном углу.
-- Расстояния — метры, углы — градусы.
+- Coordinates are `{ lng, lat }` objects in degrees, WGS84.
+- Tiles follow the XYZ scheme (OSM/Google), origin in the north-west corner.
+- Distances are metres, angles are degrees.

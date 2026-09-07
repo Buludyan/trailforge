@@ -11,7 +11,7 @@ export default function Home() {
       <p>
         tile: {tile.z}/{tile.x}/{tile.y}
       </p>
-      <p>{metersPerPixel(YEREVAN.lat, 14).toFixed(2)} м/пиксель на z=14</p>
+      <p>{metersPerPixel(YEREVAN.lat, 14).toFixed(2)} m/pixel at z=14</p>
     </main>
   );
 }
