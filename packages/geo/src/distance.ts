@@ -1,19 +1,10 @@
-/**
- * Сферическая геодезия: расстояния, азимуты, длина трека.
- *
- * Считаем по сфере, а не по эллипсоиду: на длинах пешего маршрута
- * погрешность порядка 0.3%, что дешевле и точнее, чем нужно для профиля высот.
- */
-
 import type { LngLat } from './mercator';
 
-/** Средний радиус Земли по WGS84, метры. */
 export const MEAN_EARTH_RADIUS = 6371008.8;
 
 const DEG_TO_RAD = Math.PI / 180;
 const RAD_TO_DEG = 180 / Math.PI;
 
-/** Расстояние по большому кругу между двумя точками, метры. */
 export function haversineDistance(a: LngLat, b: LngLat): number {
   const lat1 = a.lat * DEG_TO_RAD;
   const lat2 = b.lat * DEG_TO_RAD;
@@ -27,7 +18,6 @@ export function haversineDistance(a: LngLat, b: LngLat): number {
   return 2 * MEAN_EARTH_RADIUS * Math.asin(Math.min(1, Math.sqrt(h)));
 }
 
-/** Начальный азимут из `a` в `b`, градусы в диапазоне [0, 360). */
 export function initialBearing(a: LngLat, b: LngLat): number {
   const lat1 = a.lat * DEG_TO_RAD;
   const lat2 = b.lat * DEG_TO_RAD;
@@ -39,7 +29,6 @@ export function initialBearing(a: LngLat, b: LngLat): number {
   return (Math.atan2(y, x) * RAD_TO_DEG + 360) % 360;
 }
 
-/** Точка на расстоянии `distance` метров по азимуту `bearing` градусов. */
 export function destination(origin: LngLat, bearing: number, distance: number): LngLat {
   const angular = distance / MEAN_EARTH_RADIUS;
   const theta = bearing * DEG_TO_RAD;
@@ -62,7 +51,6 @@ export function destination(origin: LngLat, bearing: number, distance: number): 
   };
 }
 
-/** Длина ломаной по сфере, метры. Для трека короче двух точек — 0. */
 export function pathLength(points: readonly LngLat[]): number {
   let total = 0;
   for (let i = 1; i < points.length; i += 1) {
