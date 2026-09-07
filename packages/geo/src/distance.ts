@@ -51,7 +51,7 @@ export function destination(origin: LngLat, bearing: number, distance: number): 
   };
 }
 
-export function pathLength(points: readonly LngLat[]): number {
+export function lineLength(points: readonly LngLat[]): number {
   let total = 0;
   for (let i = 1; i < points.length; i += 1) {
     const prev = points[i - 1];

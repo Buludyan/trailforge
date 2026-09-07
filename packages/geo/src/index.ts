@@ -20,5 +20,5 @@ export {
   destination,
   haversineDistance,
   initialBearing,
-  pathLength,
+  lineLength,
 } from './distance';

@@ -5,7 +5,7 @@ import {
   destination,
   haversineDistance,
   initialBearing,
-  pathLength,
+  lineLength,
 } from './distance';
 
 const YEREVAN = { lng: 44.4991, lat: 40.1792 };
@@ -78,19 +78,19 @@ describe('destination', () => {
   });
 });
 
-describe('pathLength', () => {
+describe('lineLength', () => {
   it('gives zero length for empty and single-point tracks', () => {
-    expect(pathLength([])).toBe(0);
-    expect(pathLength([YEREVAN])).toBe(0);
+    expect(lineLength([])).toBe(0);
+    expect(lineLength([YEREVAN])).toBe(0);
   });
 
   it('equals the distance between the two points for a two-point track', () => {
-    expect(pathLength([YEREVAN, TBILISI])).toBeCloseTo(haversineDistance(YEREVAN, TBILISI), 9);
+    expect(lineLength([YEREVAN, TBILISI])).toBeCloseTo(haversineDistance(YEREVAN, TBILISI), 9);
   });
 
   it('sums the segments', () => {
     const middle = destination(YEREVAN, 8, 80000);
-    const total = pathLength([YEREVAN, middle, TBILISI]);
+    const total = lineLength([YEREVAN, middle, TBILISI]);
     expect(total).toBeGreaterThan(haversineDistance(YEREVAN, TBILISI));
     expect(total).toBeCloseTo(
       haversineDistance(YEREVAN, middle) + haversineDistance(middle, TBILISI),
@@ -99,7 +99,7 @@ describe('pathLength', () => {
   });
 
   it('doubles the length when returning to the start', () => {
-    expect(pathLength([YEREVAN, TBILISI, YEREVAN])).toBeCloseTo(
+    expect(lineLength([YEREVAN, TBILISI, YEREVAN])).toBeCloseTo(
       2 * haversineDistance(YEREVAN, TBILISI),
       9,
     );
