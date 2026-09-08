@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { lngLatToTile, metersPerPixel } from '@trailforge/geo';
 
 const YEREVAN = { lng: 44.4991, lat: 40.1792 };
@@ -12,6 +14,9 @@ export default function Home() {
         tile: {tile.z}/{tile.x}/{tile.y}
       </p>
       <p>{metersPerPixel(YEREVAN.lat, 14).toFixed(2)} m/pixel at z=14</p>
+      <p>
+        <Link href="/map">Open map →</Link>
+      </p>
     </main>
   );
 }

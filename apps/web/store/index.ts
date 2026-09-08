@@ -1,8 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import { mapReducer } from '@/features/map/mapSlice';
+
 export function makeStore() {
   return configureStore({
-    reducer: {},
+    reducer: {
+      map: mapReducer,
+    },
   });
 }
 

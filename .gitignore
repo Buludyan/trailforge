@@ -19,6 +19,8 @@ data/
 *.geojson
 !fixtures/**/*.geojson
 
+apps/web/public/maplibre/
+
 coverage/
 .DS_Store
 *.log
