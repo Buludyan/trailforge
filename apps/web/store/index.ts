@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import { mapReducer } from '@/features/map/mapSlice';
+import { routeReducer } from '@/features/route-builder/routeSlice';
 
 export function makeStore() {
   return configureStore({
     reducer: {
       map: mapReducer,
+      route: routeReducer,
     },
   });
 }

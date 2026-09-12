@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="TrailForge fixture" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Aragats south summit</name>
+    <time>2024-08-17T04:30:00Z</time>
+  </metadata>
+  <wpt lat="40.4728" lon="44.1861">
+    <ele>3190</ele>
+    <name>Kari Lake trailhead</name>
+    <desc>Parking and start of the ridge path</desc>
+  </wpt>
+  <wpt lat="40.4879" lon="44.1980">
+    <name>South summit</name>
+  </wpt>
+  <trk>
+    <name>Aragats south summit</name>
+    <trkseg>
+      <trkpt lat="40.4728" lon="44.1861">
+        <ele>3190.0</ele>
+        <time>2024-08-17T04:32:11Z</time>
+      </trkpt>
+      <trkpt lat="40.4761" lon="44.1893">
+        <ele>3245.5</ele>
+        <time>2024-08-17T04:41:02Z</time>
+      </trkpt>
+      <trkpt lat="40.4802" lon="44.1925">
+        <ele>3318.2</ele>
+        <time>2024-08-17T04:52:40Z</time>
+      </trkpt>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="40.4844" lon="44.1957">
+        <ele>3402.9</ele>
+        <time>2024-08-17T05:10:05Z</time>
+      </trkpt>
+      <trkpt lat="40.4879" lon="44.1980">
+        <ele>3468.1</ele>
+        <time>2024-08-17T05:22:33Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
